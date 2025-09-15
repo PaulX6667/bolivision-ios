@@ -7,46 +7,30 @@ workflows:
       xcode: "15.2"
       cocoapods: default
       vars:
-        XCODE_WORKSPACE: "bolivision-ios.xcodeproj"
+        XCODE_PROJECT: "bolivision-ios.xcodeproj"
         XCODE_SCHEME: "bolivisionairtv"
         EXPORT_OPTIONS_PLIST: "exportOptions.plist"
-      groups:
-        - firebase_credentials
     scripts:
-      - name: Pre-build - restore Firebase plist from secret (optional)
-        script: |
-          if [ ! -z "$IOS_FIREBASE_BASE64" ]; then
-            echo "Restoring GoogleService-Info.plist from IOS_FIREBASE_BASE64..."
-            mkdir -p ios/Bolivision
-            echo "$IOS_FIREBASE_BASE64" | base64 --decode > ios/Bolivision/GoogleService-Info.plist
-          else
-            echo "No IOS_FIREBASE_BASE64 variable found; ensure GoogleService-Info.plist is in repo or uploaded as secret."
-          fi
-
       - name: Fix duplicate Info.plist issue
         script: |
           echo "🛠  Removing duplicate Info.plist from Copy Bundle Resources..."
           sed -i.bak '/Info.plist in Resources/d' bolivision-ios.xcodeproj/project.pbxproj || true
-
       - name: Create shared scheme if missing
         script: |
           set -e
           cd $CM_BUILD_DIR
+          xcodebuild -list -project bolivision-ios.xcodeproj
           if [ ! -f "bolivision-ios.xcodeproj/xcshareddata/xcschemes/bolivisionairtv.xcscheme" ]; then
-            echo "⚡ No scheme found, creating one..."
-            xcodegen || true
+            echo "⚡ No scheme found, you need to add bolivisionairtv.xcscheme to your repo."
+            exit 1
           fi
-
       - name: Prepare xcodebuild logs
         script: |
           mkdir -p /tmp/xcodebuild_logs
-
       - name: Build and archive
         script: |
           set -o pipefail
-          xcodebuild -workspace "$XCODE_WORKSPACE" -scheme "$XCODE_SCHEME" -configuration Release -archivePath $CM_BUILD_DIR/build/${XCODE_SCHEME}.xcarchive archive | tee /tmp/xcodebuild_logs/build.log
+          xcodebuild -project "$XCODE_PROJECT" -scheme "$XCODE_SCHEME" -configuration Release -archivePath $CM_BUILD_DIR/build/${XCODE_SCHEME}.xcarchive archive CODE_SIGN_IDENTITY="" CODE_SIGNING_ALLOWED=NO | tee /tmp/xcodebuild_logs/build.log
           xcodebuild -exportArchive -archivePath $CM_BUILD_DIR/build/${XCODE_SCHEME}.xcarchive -exportOptionsPlist $EXPORT_OPTIONS_PLIST -exportPath $CM_BUILD_DIR/build/ipa | tee /tmp/xcodebuild_logs/export.log || true
-
     artifacts:
       - $CM_BUILD_DIR/build/ipa/*.ipa
-
