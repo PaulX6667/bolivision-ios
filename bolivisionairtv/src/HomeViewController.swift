@@ -1,5 +1,4 @@
 import UIKit
-import GoogleMobileAds
 
 class HomeViewController: UIViewController {
 
