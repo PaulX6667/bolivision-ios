@@ -18,7 +18,6 @@
 		8A01D2872E74B8BF00421386 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A01D2802E74B8BF00421386 /* SceneDelegate.swift */; };
 		8A01D2882E74B8BF00421386 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A01D2812E74B8BF00421386 /* VideoPlayerViewController.swift */; };
 		8A01D28B2E74B8DB00421386 /* prebuild_decode_firebase.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8A01D28A2E74B8DB00421386 /* prebuild_decode_firebase.sh */; };
-		8A01D28F2E74B8EA00421386 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A01D28D2E74B8EA00421386 /* Info.plist */; };
 		8A01D2AA2E74B8F700421386 /* admas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A01D2932E74B8F700421386 /* admas.jpg */; };
 		8A01D2AB2E74B8F700421386 /* admas_pres.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A01D2942E74B8F700421386 /* admas_pres.jpg */; };
 		8A01D2AC2E74B8F700421386 /* aldiatudia.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A01D2952E74B8F700421386 /* aldiatudia.png */; };
@@ -155,14 +154,6 @@
 			path = scripts;
 			sourceTree = "<group>";
 		};
-		8A01D28C2E74B8EA00421386 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8A01D28D2E74B8EA00421386 /* Info.plist */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		8A01D2912E74B8F700421386 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,7 +276,6 @@
 				8A01D2BA2E74B8F700421386 /* rqplogo_press.jpg in Resources */,
 				8A01D2AE2E74B8F700421386 /* bg_btn_welcome.png in Resources */,
 				8A01D2AD2E74B8F700421386 /* bg_btn_login.png in Resources */,
-				8A01D28F2E74B8EA00421386 /* Info.plist in Resources */,
 				8A01D2B22E74B8F700421386 /* bolivision_inicio_pres.png in Resources */,
 				8A01D2AC2E74B8F700421386 /* aldiatudia.png in Resources */,
 				8A01D2B12E74B8F700421386 /* bolivision_inicio.jpg in Resources */,
