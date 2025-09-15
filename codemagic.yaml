@@ -1,4 +1,3 @@
-
 workflows:
   build-ios-archive:
     name: Build iOS archive (export unsigned IPA)
@@ -22,6 +21,15 @@ workflows:
             echo "$IOS_FIREBASE_BASE64" | base64 --decode > ios/Bolivision/GoogleService-Info.plist
           else
             echo "No IOS_FIREBASE_BASE64 variable found; ensure GoogleService-Info.plist is in repo or uploaded as secret."
+            fi
+      - name: Create shared scheme if missing
+        script: |
+          set -e
+          cd $CM_BUILD_DIR
+          xcodebuild -list -workspace bolivision-ios.xcworkspace
+          if [ ! -f "bolivision-ios.xcodeproj/xcshareddata/xcschemes/bolivisionairtv.xcscheme" ]; then
+            echo "⚡ No scheme found, creating one..."
+            xcodegen || true
           fi
       - name: Prepare xcodebuild logs
         script: |
