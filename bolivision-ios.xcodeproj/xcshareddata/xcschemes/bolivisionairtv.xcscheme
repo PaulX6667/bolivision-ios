@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "APP_TARGET_ID"
+               BlueprintIdentifier = "8A01D24A2E74B4CB00421386"
                BuildableName = "bolivisionairtv.app"
                BlueprintName = "bolivisionairtv"
                ReferencedContainer = "container:bolivision-ios.xcodeproj">
@@ -44,7 +44,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "APP_TARGET_ID"
+            BlueprintIdentifier = "8A01D24A2E74B4CB00421386"
             BuildableName = "bolivisionairtv.app"
             BlueprintName = "bolivisionairtv"
             ReferencedContainer = "container:bolivision-ios.xcodeproj">
@@ -61,7 +61,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "APP_TARGET_ID"
+            BlueprintIdentifier = "8A01D24A2E74B4CB00421386"
             BuildableName = "bolivisionairtv.app"
             BlueprintName = "bolivisionairtv"
             ReferencedContainer = "container:bolivision-ios.xcodeproj">
