@@ -36,6 +36,3 @@ workflows:
           xcodebuild -exportArchive -archivePath $CM_BUILD_DIR/build/${XCODE_SCHEME}.xcarchive -exportOptionsPlist $EXPORT_OPTIONS_PLIST -exportPath $CM_BUILD_DIR/build/ipa | tee /tmp/xcodebuild_logs/export.log || true
     artifacts:
       - $CM_BUILD_DIR/build/ipa/*.ipa
-    triggers:
-      - push
-      - pull_request
