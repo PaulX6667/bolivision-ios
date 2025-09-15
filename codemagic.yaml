@@ -5,7 +5,6 @@ workflows:
     instance_type: mac_mini_m2
     environment:
       xcode: "15.2"
-      cocoapods: none
       vars:
         XCODE_PROJECT: "bolivision-ios.xcodeproj"
         XCODE_SCHEME: "bolivisionairtv"
