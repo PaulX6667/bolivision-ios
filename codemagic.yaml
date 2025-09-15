@@ -7,21 +7,12 @@ workflows:
       xcode: "15.2"
       cocoapods: default
       vars:
-        XCODE_WORKSPACE: "bolivision-ios.xcworkspace"
+        XCODE_PROJECT: "bolivision-ios.xcodeproj"
         XCODE_SCHEME: "bolivisionairtv"
         EXPORT_OPTIONS_PLIST: "exportOptions.plist"
       groups:
         - firebase_credentials
     scripts:
-      - name: Pre-build - restore Firebase plist from secret (optional)
-        script: |
-          if [ ! -z "$IOS_FIREBASE_BASE64" ]; then
-            echo "Restoring GoogleService-Info.plist from IOS_FIREBASE_BASE64..."
-            mkdir -p ios/Bolivision
-            echo "$IOS_FIREBASE_BASE64" | base64 --decode > ios/Bolivision/GoogleService-Info.plist
-          else
-            echo "No IOS_FIREBASE_BASE64 variable found; ensure GoogleService-Info.plist is in repo or uploaded as secret."
-            fi
       - name: Create shared scheme if missing
         script: |
           set -e
@@ -34,9 +25,6 @@ workflows:
       - name: Prepare xcodebuild logs
         script: |
           mkdir -p /tmp/xcodebuild_logs
-      - name: Install CocoaPods dependencies
-        script: |
-          pod install --repo-update || true
       - name: Build and archive
         script: |
           set -o pipefail
