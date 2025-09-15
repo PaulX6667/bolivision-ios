@@ -11,7 +11,6 @@
 		8A01D2502E74B4CB00421386 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A01D24F2E74B4CB00421386 /* ViewController.swift */; };
 		8A01D2532E74B4CB00421386 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A01D2512E74B4CB00421386 /* Main.storyboard */; };
 		8A01D2552E74B4CB00421386 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A01D2542E74B4CB00421386 /* Assets.xcassets */; };
-		8A01D2582E74B4CB00421386 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A01D2562E74B4CB00421386 /* LaunchScreen.storyboard */; };
 		8A01D2822E74B8BF00421386 /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A01D27B2E74B8BF00421386 /* AdManager.swift */; };
 		8A01D2842E74B8BF00421386 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A01D27D2E74B8BF00421386 /* FirebaseHelper.swift */; };
 		8A01D2852E74B8BF00421386 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A01D27E2E74B8BF00421386 /* GalleryViewController.swift */; };
@@ -20,7 +19,6 @@
 		8A01D2882E74B8BF00421386 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A01D2812E74B8BF00421386 /* VideoPlayerViewController.swift */; };
 		8A01D28B2E74B8DB00421386 /* prebuild_decode_firebase.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8A01D28A2E74B8DB00421386 /* prebuild_decode_firebase.sh */; };
 		8A01D28F2E74B8EA00421386 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A01D28D2E74B8EA00421386 /* Info.plist */; };
-		8A01D2902E74B8EA00421386 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A01D28E2E74B8EA00421386 /* LaunchScreen.storyboard */; };
 		8A01D2AA2E74B8F700421386 /* admas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A01D2932E74B8F700421386 /* admas.jpg */; };
 		8A01D2AB2E74B8F700421386 /* admas_pres.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A01D2942E74B8F700421386 /* admas_pres.jpg */; };
 		8A01D2AC2E74B8F700421386 /* aldiatudia.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A01D2952E74B8F700421386 /* aldiatudia.png */; };
@@ -63,7 +61,6 @@
 		8A01D2812E74B8BF00421386 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		8A01D28A2E74B8DB00421386 /* prebuild_decode_firebase.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = prebuild_decode_firebase.sh; sourceTree = "<group>"; };
 		8A01D28D2E74B8EA00421386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		8A01D28E2E74B8EA00421386 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A01D2932E74B8F700421386 /* admas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = admas.jpg; sourceTree = "<group>"; };
 		8A01D2942E74B8F700421386 /* admas_pres.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = admas_pres.jpg; sourceTree = "<group>"; };
 		8A01D2952E74B8F700421386 /* aldiatudia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aldiatudia.png; sourceTree = "<group>"; };
@@ -130,7 +127,6 @@
 				8A01D24F2E74B4CB00421386 /* ViewController.swift */,
 				8A01D2512E74B4CB00421386 /* Main.storyboard */,
 				8A01D2542E74B4CB00421386 /* Assets.xcassets */,
-				8A01D2562E74B4CB00421386 /* LaunchScreen.storyboard */,
 				8A01D2592E74B4CB00421386 /* Info.plist */,
 			);
 			path = bolivisionairtv;
@@ -161,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				8A01D28D2E74B8EA00421386 /* Info.plist */,
-				8A01D28E2E74B8EA00421386 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -278,7 +273,6 @@
 				8A01D2B02E74B8F700421386 /* bg_txt_username.png in Resources */,
 				8A01D2BD2E74B8F700421386 /* entelFutbolero5.mp4 in Resources */,
 				8A01D2B72E74B8F700421386 /* livebolivision.png in Resources */,
-				8A01D2582E74B4CB00421386 /* LaunchScreen.storyboard in Resources */,
 				8A01D2B82E74B8F700421386 /* livebolivision_pres.png in Resources */,
 				8A01D2AA2E74B8F700421386 /* admas.jpg in Resources */,
 				8A01D2552E74B4CB00421386 /* Assets.xcassets in Resources */,
@@ -289,7 +283,6 @@
 				8A01D2BA2E74B8F700421386 /* rqplogo_press.jpg in Resources */,
 				8A01D2AE2E74B8F700421386 /* bg_btn_welcome.png in Resources */,
 				8A01D2AD2E74B8F700421386 /* bg_btn_login.png in Resources */,
-				8A01D2902E74B8EA00421386 /* LaunchScreen.storyboard in Resources */,
 				8A01D28F2E74B8EA00421386 /* Info.plist in Resources */,
 				8A01D2B22E74B8F700421386 /* bolivision_inicio_pres.png in Resources */,
 				8A01D2AC2E74B8F700421386 /* aldiatudia.png in Resources */,
@@ -332,7 +325,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		8A01D2562E74B4CB00421386 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8A01D2572E74B4CB00421386 /* Base */,
