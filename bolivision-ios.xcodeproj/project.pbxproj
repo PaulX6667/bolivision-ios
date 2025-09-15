@@ -61,6 +61,7 @@
 		8A01D2812E74B8BF00421386 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		8A01D28A2E74B8DB00421386 /* prebuild_decode_firebase.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = prebuild_decode_firebase.sh; sourceTree = "<group>"; };
 		8A01D28D2E74B8EA00421386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8A01D28E2E74B8EA00421386 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A01D2932E74B8F700421386 /* admas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = admas.jpg; sourceTree = "<group>"; };
 		8A01D2942E74B8F700421386 /* admas_pres.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = admas_pres.jpg; sourceTree = "<group>"; };
 		8A01D2952E74B8F700421386 /* aldiatudia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aldiatudia.png; sourceTree = "<group>"; };
@@ -127,6 +128,7 @@
 				8A01D24F2E74B4CB00421386 /* ViewController.swift */,
 				8A01D2512E74B4CB00421386 /* Main.storyboard */,
 				8A01D2542E74B4CB00421386 /* Assets.xcassets */,
+				8A01D2562E74B4CB00421386 /* LaunchScreen.storyboard */,
 				8A01D2592E74B4CB00421386 /* Info.plist */,
 			);
 			path = bolivisionairtv;
@@ -325,6 +327,7 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+		8A01D2562E74B4CB00421386 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8A01D2572E74B4CB00421386 /* Base */,
