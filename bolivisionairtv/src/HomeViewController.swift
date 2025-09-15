@@ -1,18 +1,23 @@
 import UIKit
+import AVKit
+import AVFoundation
 
 class HomeViewController: UIViewController {
 
     var player: AVPlayer?
     var playerLayer: AVPlayerLayer?
-    var bannerView: GADBannerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemBackground
+        } else {
+            view.backgroundColor = .white
+        }
         title = "Bolivision - Home"
 
         setupPlayer()
-        setupBannerAd()
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Galería", style: .plain, target: self, action: #selector(openGallery))
     }
 
@@ -35,18 +40,7 @@ class HomeViewController: UIViewController {
         player?.play()
     }
 
-    func setupBannerAd() {
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        bannerView.adUnitID = "ca-app-pub-XXXXXXXXXXXXXXXX/BBBBBBBBBB"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        NSLayoutConstraint.activate([
-            bannerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
-    }
+    
 
     func topbarHeight() -> CGFloat {
         return (navigationController?.navigationBar.frame.maxY ?? 64)
