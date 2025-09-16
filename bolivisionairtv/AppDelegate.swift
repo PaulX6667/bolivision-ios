@@ -1,5 +1,5 @@
 import UIKit
-import GoogleMobileAds
+//import GoogleMobileAds
 import FBSDKCoreKit
 
 //@UIApplicationMain
@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // FirebaseApp.configure() // comentado
         
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        //GADMobileAds.sharedInstance().start(completionHandler: nil)
 
         //window = UIWindow(frame: UIScreen.main.bounds)
         //let nav = UINavigationController(rootViewController: HomeViewController())
