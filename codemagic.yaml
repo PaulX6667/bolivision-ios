@@ -11,9 +11,13 @@ workflows:
         XCODE_SCHEME: "bolivisionairtv"
         EXPORT_OPTIONS_PLIST: "exportOptions.plist"
     scripts:
+      - name: Clean Pods
+        script: |
+          rm -rf Pods Podfile.lock
+          pod deintegrate
       - name: Install pods
         script: |
-          pod install
+          pod install --repo-update
       - name: Fix duplicate Info.plist issue
         script: |
           echo "🛠  Removing duplicate Info.plist from Copy Bundle Resources..."
