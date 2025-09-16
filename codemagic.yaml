@@ -7,7 +7,7 @@ workflows:
       xcode: "15.2"
       cocoapods: default
       vars:
-        XCODE_WORKSPACE: "bolivisionairtv.xcworkspace"
+        XCODE_WORKSPACE: "bolivision-ios.xcworkspace"
         XCODE_SCHEME: "bolivisionairtv"
         EXPORT_OPTIONS_PLIST: "exportOptions.plist"
     scripts:
