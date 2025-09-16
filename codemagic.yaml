@@ -59,3 +59,8 @@ workflows:
           zip -r9 $CM_BUILD_DIR/build/ipa/bolivisionairtv-unsigned.ipa Payload
     artifacts:
       - $CM_BUILD_DIR/build/ipa/*.ipa
+    publishing:
+      app_preview:
+        title: "Bolivision iOS Preview"
+        artifact_paths:
+          - $CM_BUILD_DIR/build/ipa/*.ipa
