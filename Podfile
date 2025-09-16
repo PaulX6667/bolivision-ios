@@ -16,7 +16,7 @@ target 'bolivisionairtv' do
   pod 'Firebase/Firestore'
 
   # Google Ads
-  pod 'Google-Mobile-Ads-SDK', '~> 11.0'
+  pod 'Google-Mobile-Ads-SDK', '~> 10.12'
 
   # Facebook SDK
   pod 'FacebookCore'
