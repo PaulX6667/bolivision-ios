@@ -32,15 +32,15 @@ class HomeViewController: UIViewController {
         playerLayer = AVPlayerLayer(player: player)
         playerLayer?.videoGravity = .resizeAspect
 
-        let playerView = UIView(frame: CGRect(x: 0, y: topbarHeight(), width: view.bounds.width, height: 220))
-        playerView.layer.addSublayer(playerLayer!)
+        let playerView = UIView(frame: CGRect(x: 0, y: topbarHeight(), width: view.bounds.width, height: 220))        
+        if let pl = playerLayer {
+            playerView.layer.addSublayer(pl)
+        }
         view.addSubview(playerView)
 
         playerLayer?.frame = playerView.bounds
         player?.play()
     }
-
-    
 
     func topbarHeight() -> CGFloat {
         return (navigationController?.navigationBar.frame.maxY ?? 64)
