@@ -6,10 +6,13 @@
   <string>development</string>
   <key>signingStyle</key>
   <string>manual</string>
-  <key>compileBitcode</key>
-  <false/>
+  <key>signingCertificate</key>
+  <string>-</string>
   <key>provisioningProfiles</key>
   <dict/>
+  <key>teamID</key>
+  <string></string>
+  <key>compileBitcode</key>
+  <false/>
 </dict>
 </plist>
-
