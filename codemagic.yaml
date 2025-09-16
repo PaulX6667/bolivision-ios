@@ -20,6 +20,10 @@ workflows:
       - name: Install pods
         script: |
           pod install --repo-update
+      - name: Force iOS 13 deployment target
+        script: |
+          sed -i '' 's/IPHONEOS_DEPLOYMENT_TARGET = 12.0;/IPHONEOS_DEPLOYMENT_TARGET = 13.0;/g' bolivision-ios.xcodeproj/project.pbxproj
+          find Pods -name "project.pbxproj" -exec sed -i '' 's/IPHONEOS_DEPLOYMENT_TARGET = 12.0;/IPHONEOS_DEPLOYMENT_TARGET = 13.0;/g' {} +
       - name: Fix duplicate Info.plist issue
         script: |
           echo "🛠  Removing duplicate Info.plist from Copy Bundle Resources..."
