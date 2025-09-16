@@ -1,4 +1,5 @@
-
+import Foundation
+import GoogleMobileAds
 import UIKit
 
 class AdManager {
