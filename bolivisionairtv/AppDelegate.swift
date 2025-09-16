@@ -1,6 +1,6 @@
 import UIKit
 //import GoogleMobileAds
-import FBSDKCoreKit
+//import FBSDKCoreKit
 
 //@UIApplicationMain
 @main
