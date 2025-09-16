@@ -5,11 +5,16 @@ workflows:
     instance_type: mac_mini_m2
     environment:
       xcode: "15.2"
+      cocoapods: default
       vars:
-        XCODE_PROJECT: "bolivision-ios.xcodeproj"
+        XCODE_WORKSPACE: "bolivisionairtv.xcworkspace"
         XCODE_SCHEME: "bolivisionairtv"
         EXPORT_OPTIONS_PLIST: "exportOptions.plist"
     scripts:
+      - name: Install pods
+        script: |
+          cd bolivisionairtv
+          pod install
       - name: Fix duplicate Info.plist issue
         script: |
           echo "🛠  Removing duplicate Info.plist from Copy Bundle Resources..."
@@ -30,13 +35,13 @@ workflows:
         script: |
           set -o pipefail
           # Build y archive sin firmar ni usar Firebase
-          xcodebuild -project "$XCODE_PROJECT" \
+          xcodebuild -workspace "$XCODE_WORKSPACE" \
             -scheme "$XCODE_SCHEME" \
             -configuration Release \
             -archivePath $CM_BUILD_DIR/build/${XCODE_SCHEME}.xcarchive \
             archive \
             CODE_SIGN_IDENTITY="" \
-            CODE_SIGNING_ALLOWED=NO | tee /tmp/xcodebuild_logs/build.log
+            CODE_SIGNING_ALLOWED=NO
           xcodebuild -exportArchive \
             -archivePath $CM_BUILD_DIR/build/${XCODE_SCHEME}.xcarchive \
             -exportOptionsPlist $EXPORT_OPTIONS_PLIST \
