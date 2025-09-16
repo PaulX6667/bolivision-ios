@@ -1,6 +1,7 @@
 
 platform :ios, '13.0'
-
+use_frameworks!
+use_modular_headers!
 project 'bolivision-ios.xcodeproj'
 
 target 'bolivisionairtv' do
