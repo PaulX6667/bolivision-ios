@@ -19,7 +19,9 @@ target 'bolivisionairtv' do
   pod 'Google-Mobile-Ads-SDK', '~> 11.0'
 
   # Facebook SDK
-  pod 'FacebookSDK'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
 end
 
 post_install do |installer|
