@@ -9,7 +9,6 @@ workflows:
       vars:
         XCODE_WORKSPACE: "bolivision-ios.xcworkspace"
         XCODE_SCHEME: "bolivisionairtv"
-        EXPORT_OPTIONS_PLIST: "exportOptions.plist"
     scripts:
       - name: Clean Pods
         script: |
@@ -50,12 +49,13 @@ workflows:
             -archivePath $CM_BUILD_DIR/build/${XCODE_SCHEME}.xcarchive \
             archive \
             CODE_SIGN_IDENTITY="" \
-            CODE_SIGNING_ALLOWED=NO | tee /tmp/xcodebuild_logs/build.log
-          xcodebuild -exportArchive \
-            -archivePath $CM_BUILD_DIR/build/${XCODE_SCHEME}.xcarchive \
-            -exportOptionsPlist $EXPORT_OPTIONS_PLIST \
-            -exportPath $CM_BUILD_DIR/build/ipa \
-            CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_ALLOWED=NO
+      - name: Package unsigned IPA
+        script: |
+          mkdir -p $CM_BUILD_DIR/build/ipa
+          cd $CM_BUILD_DIR/build/${XCODE_SCHEME}.xcarchive/Products/Applications
+          mkdir Payload
+          cp -r bolivisionairtv.app Payload/
+          zip -r9 $CM_BUILD_DIR/build/ipa/bolivisionairtv-unsigned.ipa Payload
     artifacts:
       - $CM_BUILD_DIR/build/ipa/*.ipa
