@@ -8,6 +8,9 @@ target 'bolivisionairtv' do
   use_frameworks!
   inhibit_all_warnings!
   pod 'Firebase/Core'
+  pod 'FirebaseAnalytics'
+  pod 'FirebaseMessaging'
+  pod 'FirebaseCrashlytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Google-Mobile-Ads-SDK'
