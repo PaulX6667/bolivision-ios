@@ -59,11 +59,6 @@ workflows:
           zip -r9 $CM_BUILD_DIR/build/ipa/bolivisionairtv-unsigned.ipa Payload
     artifacts:
       - $CM_BUILD_DIR/build/ipa/*.ipa
-    publishing:
-      app_preview:
-        title: "Bolivision iOS Preview"
-        artifact_paths:
-          - $CM_BUILD_DIR/build/ipa/*.ipa
   build-ios-preview:
     name: Build iOS App for Preview
     max_build_duration: 60
@@ -96,8 +91,3 @@ workflows:
           cp -r build/Build/Products/Debug-iphonesimulator/bolivisionairtv.app $CM_BUILD_DIR/build/app/
     artifacts:
       - $CM_BUILD_DIR/build/app/*.app
-    publishing:
-      app_preview:
-        title: "Bolivision iOS Preview"
-        artifact_paths:
-          - $CM_BUILD_DIR/build/app/*.app
