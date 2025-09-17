@@ -64,3 +64,40 @@ workflows:
         title: "Bolivision iOS Preview"
         artifact_paths:
           - $CM_BUILD_DIR/build/ipa/*.ipa
+  build-ios-preview:
+    name: Build iOS App for Preview
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      xcode: "15.2"
+      cocoapods: default
+      vars:
+        XCODE_WORKSPACE: "bolivision-ios.xcworkspace"
+        XCODE_SCHEME: "bolivisionairtv"
+    scripts:
+      - name: Clean Pods
+        script: |
+          rm -rf Pods Podfile.lock
+          pod deintegrate
+          rm -rf ~/Library/Developer/Xcode/DerivedData/*
+      - name: Install pods
+        script: |
+          pod install --repo-update
+      - name: Build for Simulator
+        script: |
+          xcodebuild \
+            -workspace "$XCODE_WORKSPACE" \
+            -scheme "$XCODE_SCHEME" \
+            -sdk iphonesimulator \
+            -configuration Debug \
+            -derivedDataPath build
+          # Copiar el .app al directorio de artifacts
+          mkdir -p $CM_BUILD_DIR/build/app
+          cp -r build/Build/Products/Debug-iphonesimulator/bolivisionairtv.app $CM_BUILD_DIR/build/app/
+    artifacts:
+      - $CM_BUILD_DIR/build/app/*.app
+    publishing:
+      app_preview:
+        title: "Bolivision iOS Preview"
+        artifact_paths:
+          - $CM_BUILD_DIR/build/app/*.app
