@@ -77,4 +77,4 @@ workflows:
 
     artifacts:
       - $CM_BUILD_DIR/build/ipa/*.ipa   # IPA unsigned
-      - $CM_BUILD_DIR/build/app/*.app   # APP para Preview
+      - $CM_BUILD_DIR/build/app   # APP para Preview
